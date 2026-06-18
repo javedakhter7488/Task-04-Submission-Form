@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="form-styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>Job Application Form</h1>
+                <p>Please fill out the form below to apply for a position with us</p>
+            </div>
+
+            <form id="jobApplicationForm" class="application-form" novalidate>
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="fullName" class="form-label">
+                        Full Name <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        class="form-input"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        Email Address <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input"
+                        placeholder="Enter your email address"
+                        required
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="form-group">
+                    <label for="phone" class="form-label">
+                        Phone Number <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="form-input"
+                        placeholder="Enter your phone number (e.g., +1-234-567-8900)"
+                        required
+                    >
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <!-- Message/Cover Letter Field -->
+                <div class="form-group">
+                    <label for="message" class="form-label">
+                        Cover Letter <span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        class="form-textarea"
+                        placeholder="Tell us why you're interested in this position and what makes you a great fit..."
+                        rows="6"
+                        required
+                    ></textarea>
+                    <div class="character-count">
+                        <span id="charCount">0</span>/500 characters
+                    </div>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+
+                <!-- Optional: Position Selection -->
+                <div class="form-group">
+                    <label for="position" class="form-label">
+                        Position Applied For
+                    </label>
+                    <select id="position" name="position" class="form-input">
+                        <option value="">Select a position</option>
+                        <option value="frontend-developer">Frontend Developer</option>
+                        <option value="backend-developer">Backend Developer</option>
+                        <option value="fullstack-developer">Full Stack Developer</option>
+                        <option value="ux-designer">UX Designer</option>
+                        <option value="data-analyst">Data Analyst</option>
+                        <option value="project-manager">Project Manager</option>
+                    </select>
+                </div>
+
+                <!-- Optional: Terms and Conditions -->
+                <div class="form-group checkbox-group">
+                    <input 
+                        type="checkbox" 
+                        id="terms" 
+                        name="terms"
+                        class="form-checkbox"
+                    >
+                    <label for="terms" class="checkbox-label">
+                        I agree to the terms and conditions <span class="required">*</span>
+                    </label>
+                    <span class="error-message" id="termsError"></span>
+                </div>
+
+                <!-- Submit and Reset Buttons -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-submit">
+                        <span class="btn-text">Submit Application</span>
+                        <span class="btn-spinner"></span>
+                    </button>
+                    <button type="reset" class="btn btn-reset">Clear Form</button>
+                </div>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message hidden">
+                    <div class="success-content">
+                        <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <h3>Application Submitted Successfully!</h3>
+                        <p>Thank you for applying. We'll review your application and get back to you within 3-5 business days.</p>
+                        <button type="button" class="btn btn-secondary" onclick="location.reload()">Submit Another Application</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Form Information Sidebar -->
+        <div class="info-sidebar">
+            <div class="info-card">
+                <h3>Application Tips</h3>
+                <ul>
+                    <li>Provide a detailed cover letter</li>
+                    <li>Use a professional email address</li>
+                    <li>Include a valid phone number</li>
+                    <li>Proofread before submitting</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>What to Expect</h3>
+                <ul>
+                    <li>Confirmation email within 24 hours</li>
+                    <li>Initial review within 3-5 days</li>
+                    <li>Interview scheduling if shortlisted</li>
+                    <li>Final decision within 2 weeks</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Need Help?</h3>
+                <p>If you have any questions, contact us at:</p>
+                <p class="contact-info">
+                    📧 <a href="mailto:kodbud@company.com">careers@company.com</a><br>
+                    📞 <a href="tel:7858998049">+1 (234) 567-890</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="form-validation.js"></script>
+</body>
+</html>
